@@ -135,23 +135,54 @@
         </exec>
     </target>
 
-    <target name="composer" description="Install composer.phar">
-        <exec executable="bash">
-            <arg value="-c"/>
-            <arg value="curl -s http://getcomposer.org/installer | php"/>
-        </exec>
-    </target>
-
-    <target name="vendors" description="Install vendors">
-        <exec executable="${basedir}/composer.phar" failonerror="true">
-            <arg value="install" />
-        </exec>
-    </target>
-    
     <target name="parameters" description="Copy parameters">
         <exec executable="cp" failonerror="true">
             <arg path="app/config/parameters.ini.dist" />
             <arg path="app/config/parameters.ini" />
         </exec>
     </target>
+
+    <target name="vendors" description="Install vendors">
+        <exec executable="php" failonerror="true">
+            <arg value="${basedir}/bin/vendors" />
+            <arg value="install" />
+        </exec>
+    </target>
+
+    <target name="cache" description="Clear cache">
+        <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="cache:clear" />
+        </exec>
+    </target>
+
+    <target name="assets" description="Install assets">
+         <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="assets:install" />
+            <arg value="web" />
+        </exec>
+    </target>    
+
+    <target name="database" description="Create database">
+         <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="doctrine:database:create" />
+        </exec>
+    </target>    
+
+    <target name="schema" description="Update schema">
+         <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="doctrine:schema:create" />
+        </exec>
+    </target>    
+
+    <target name="fixtures" description="Load fixtures">
+         <exec executable="php" failonerror="true">
+            <arg value="${basedir}/app/console" />
+            <arg value="doctrine:fixtures:load" />
+        </exec>
+    </target>    
+   
 </project>
