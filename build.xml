@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="name-of-project" default="build">    
-    <target name="build" depends="prepare,parameters,vendors,assets,database,schema,fixtures,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpcb,phpunit"/>
+    <target name="build" depends="prepare,parameters,vendors,assets,database,fixtures,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpcb,phpunit"/>
     
     <target name="build-parallel" depends="prepare,lint,tools-parallel,phpcb,phpunit"/>
 
@@ -161,13 +161,6 @@
          <exec executable="php" failonerror="true">
             <arg value="${basedir}/app/console" />
             <arg value="doctrine:database:create" />
-        </exec>
-    </target>    
-
-    <target name="schema" description="Update schema">
-         <exec executable="php" failonerror="true">
-            <arg value="${basedir}/app/console" />
-            <arg value="doctrine:schema:create" />
         </exec>
     </target>    
 
