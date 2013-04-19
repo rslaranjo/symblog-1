@@ -72,7 +72,7 @@
         <exec executable="phpmd">
             <arg path="${basedir}/src" />
             <arg value="text" />
-            <arg value="${basedir}/app/Resources/jenkins/phpmd.xml" />
+            <arg value="${basedir}/app/Resources/jenking-symfony2.1/phpmd.xml" />
         </exec>
     </target>
 
@@ -80,7 +80,7 @@
         <exec executable="phpmd">
             <arg path="${basedir}/src" />
             <arg value="xml" />
-            <arg value="${basedir}/app/Resources/jenkins/phpmd.xml" />
+            <arg value="${basedir}/app/Resources/jenking-symfony2.1/phpmd.xml" />
             <arg value="--reportfile" />
             <arg value="${basedir}/app/build/logs/pmd.xml" />
         </exec>
@@ -113,7 +113,7 @@
     <target name="phpdox" description="Generate API documentation using phpDox">
         <exec executable="phpdox">
             <arg value="-f" />
-            <arg path="${basedir}/app/Resources/jenkins/phpdox.xml" />
+            <arg path="${basedir}/app/Resources/jenking-symfony2.1/phpdox.xml" />
         </exec>
     </target>
 
