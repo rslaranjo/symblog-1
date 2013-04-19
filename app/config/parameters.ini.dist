@@ -6,7 +6,7 @@
     database_host     = localhost
     database_port     =
     database_name     = symblog
-    database_user     = development
+    database_user     = root 
     database_password =
 
     mailer_transport="gmail"
