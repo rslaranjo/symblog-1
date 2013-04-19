@@ -67,12 +67,12 @@
 
 [DoctrineFixturesBundle]
     git=http://github.com/doctrine/DoctrineFixturesBundle.git
-    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+    target=/bundles/Doctrine/Bundle/DoctrineFixturesBundle
 
 [doctrine-migrations]
     git=http://github.com/doctrine/migrations.git
 
 [DoctrineMigrationsBundle]
     git=http://github.com/doctrine/DoctrineMigrationsBundle.git
-    target=/bundles/Symfony/Bundle/DoctrineMigrationsBundle
+    target=/bundles/Doctrine/Bundle/DoctrineMigrationsBundle
 
